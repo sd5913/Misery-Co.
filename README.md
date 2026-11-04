@@ -21,7 +21,7 @@
   * **Design & Interactive Reviewers**: Instructors and evaluators looking to experience multimedia pixel aesthetics, UI micro-interactions, and lightweight productivity loops.
 * **Main Purpose**:
   * To provide users with a relaxing and stress-relieving virtual Hong Kong breakfast shop management environment.
-  * To explore the lightweight interactive application of **"Resource Supply & Demand Balance"** and **"NPC Mood Feedback Mechanisms"** in casual games.
+  * To explore the lightweight interactive application of *"Resource Supply & Demand Balance"* and *"NPC Mood Feedback Mechanisms"* in casual games.
 
 ---
 
@@ -48,7 +48,7 @@
 
 | Media Type | Implementation & Design Highlights |
 | :--- | :--- |
-| **Visual Art** | 16-bit Stardew Valley warm pixel style; indoor isometric cutaway layout clearly showcasing the kitchen counter, dining area, and right-side animal eco-pen. |
+| **Visual Art** | 16-bit Stardew Valley warm pixel style; indoor isometric cutaway layout clearly showcasing the kitchen counter, dining area, and right-side animal eco-pen. *(Custom assets ready to be replaced with Jimeng AI outputs)* |
 | **Audio Design** | Native Web Audio API procedural generation for soothing background melodies and interactive click feedback without loading delays. |
 | **Dynamic UI & FX** | Warm retro wooden pixel UI panels, floating healing heart particles, real-time coin counters, and review pop-up speech bubbles. |
 
