@@ -10,7 +10,7 @@
 | **Application Type** | 2D Pixel Art Single-Player Simulation Game (Built with HTML5 / Phaser 3) |
 | **Visual Style** | Stardew Valley aesthetic, warm retro pixel palette, indoor isometric cutaway floor plan, clean dark pixel borders |
 | **Execution Environment** | Pure frontend single-file (`index.html`), no backend configuration required, runs directly in any modern browser |
-| **Team Collaboration** | 📊 Track weekly task status, deadlines, and deliverables via the [Team Scrum Board](https://github.com/sd5913/KFC-V50) |
+| **Team Collaboration** | 📊 Track weekly task status, deadlines, and deliverables via the [Team Scrum Board](https://github.com/orgs/sd5913/projects/30/views/1) |
 
 ---
 
