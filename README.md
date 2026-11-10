@@ -65,7 +65,7 @@ The game utilizes mouse-based **Point-and-Click** and **Drag-and-Drop** interact
 
 ## 5. Team Collaboration
 
-📊 Track weekly task status, deadlines, and deliverables via the **[Team Scrum Board](https://github.com/orgs/sd5913/projects/30/views/1)** and **[GitHub Issues](https://github.com/sd5913/Misery-Co./issues)**.
+📊 Track weekly task status, deadlines, and deliverables via the **[Team Scrum Board](https://github.com/orgs/sd5913/projects/30/views/1)**
 
 | Stage | Timeline | Core Deliverables |
 | :--- | :--- | :--- |
@@ -91,8 +91,7 @@ The game utilizes mouse-based **Point-and-Click** and **Drag-and-Drop** interact
 In accordance with course guidelines on academic integrity and asset attribution, the tools, assets, and AI assistance used in this project are documented below:
 
 * **Development Stack:** HTML5, CSS3, JavaScript, Git & GitHub.
+* **AI-Assisted Code Generation:** Generative AI tools (ChatGPT / Gemini) were used to generate and iterate on the HTML, CSS, and JavaScript code for the web application, under the team's prompt direction, testing, and debugging.
 * **Visual Art & Concept Assets:**
-  * The game concept, storyboard layout, and character designs were conceived and directed by the team, with generative AI tools (ChatGPT / Gemini image generation models) used to assist in visual style exploration and early UI/scene prototyping.
-  * The System Workflow diagram was originally created by the team.
-* **Code & Documentation Assistance:** AI tools were used to assist in code debugging and formatting documentation; all core gameplay logic, state management, and interactive features were implemented, reviewed, and tested by the team.
-* **Audio & Typography:** `[Insert details and licenses of any open-source fonts or sound effects used, e.g., Google Fonts / Freesound CC0]`.
+  * The game concept, storyboard, character designs, and UI mockups were conceived by the team and generated/stylized using AI image generation tools (ChatGPT / Gemini).
+  * The System Workflow diagram was created by the team and translated with AI assistance.
