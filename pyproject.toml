@@ -1,0 +1,7 @@
+[project]
+name = "misery-and-co"
+version = "0.1.0"
+description = "A Dark & Whimsical 2D Narrative Management Game (SD5913 Group Project)"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
