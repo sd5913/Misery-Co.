@@ -1,0 +1,461 @@
+{
+  "source": "暖手绘魔法炼金素材图集.png",
+  "sourceSha256": "2982621b783ac6700890e8ba2602d1bab8d4a3cd4cf8bcd693cb8cd65d1c8a94",
+  "method": "Lossless rectangular crop of original RGBA; pixels and alpha unchanged; no redraw or recolor.",
+  "sprites": {
+    "bottle-empty": {
+      "file": "assets/sprites/bottle-empty.png",
+      "sourceRect": [
+        40,
+        20,
+        280,
+        375
+      ],
+      "width": 240,
+      "height": 355,
+      "alphaRange": [
+        0,
+        254
+      ]
+    },
+    "bottle-flowers": {
+      "file": "assets/sprites/bottle-flowers.png",
+      "sourceRect": [
+        285,
+        20,
+        525,
+        375
+      ],
+      "width": 240,
+      "height": 355,
+      "alphaRange": [
+        0,
+        254
+      ]
+    },
+    "bottle-sun": {
+      "file": "assets/sprites/bottle-sun.png",
+      "sourceRect": [
+        535,
+        20,
+        775,
+        375
+      ],
+      "width": 240,
+      "height": 355,
+      "alphaRange": [
+        0,
+        254
+      ]
+    },
+    "bottle-moon": {
+      "file": "assets/sprites/bottle-moon.png",
+      "sourceRect": [
+        780,
+        20,
+        1025,
+        375
+      ],
+      "width": 245,
+      "height": 355,
+      "alphaRange": [
+        0,
+        254
+      ]
+    },
+    "bottle-roses": {
+      "file": "assets/sprites/bottle-roses.png",
+      "sourceRect": [
+        1030,
+        20,
+        1275,
+        375
+      ],
+      "width": 245,
+      "height": 355,
+      "alphaRange": [
+        0,
+        254
+      ]
+    },
+    "bottle-butterfly": {
+      "file": "assets/sprites/bottle-butterfly.png",
+      "sourceRect": [
+        1275,
+        20,
+        1535,
+        375
+      ],
+      "width": 260,
+      "height": 355,
+      "alphaRange": [
+        0,
+        254
+      ]
+    },
+    "material-rain": {
+      "file": "assets/sprites/material-rain.png",
+      "sourceRect": [
+        15,
+        390,
+        200,
+        575
+      ],
+      "width": 185,
+      "height": 185,
+      "alphaRange": [
+        0,
+        253
+      ]
+    },
+    "material-flower": {
+      "file": "assets/sprites/material-flower.png",
+      "sourceRect": [
+        200,
+        390,
+        365,
+        575
+      ],
+      "width": 165,
+      "height": 185,
+      "alphaRange": [
+        0,
+        254
+      ]
+    },
+    "material-crystal": {
+      "file": "assets/sprites/material-crystal.png",
+      "sourceRect": [
+        365,
+        390,
+        515,
+        575
+      ],
+      "width": 150,
+      "height": 185,
+      "alphaRange": [
+        0,
+        254
+      ]
+    },
+    "material-leaf": {
+      "file": "assets/sprites/material-leaf.png",
+      "sourceRect": [
+        515,
+        390,
+        680,
+        575
+      ],
+      "width": 165,
+      "height": 185,
+      "alphaRange": [
+        0,
+        253
+      ]
+    },
+    "material-berries": {
+      "file": "assets/sprites/material-berries.png",
+      "sourceRect": [
+        680,
+        390,
+        820,
+        575
+      ],
+      "width": 140,
+      "height": 185,
+      "alphaRange": [
+        0,
+        253
+      ]
+    },
+    "material-mushroom": {
+      "file": "assets/sprites/material-mushroom.png",
+      "sourceRect": [
+        820,
+        390,
+        985,
+        575
+      ],
+      "width": 165,
+      "height": 185,
+      "alphaRange": [
+        0,
+        254
+      ]
+    },
+    "material-feather": {
+      "file": "assets/sprites/material-feather.png",
+      "sourceRect": [
+        985,
+        390,
+        1110,
+        575
+      ],
+      "width": 125,
+      "height": 185,
+      "alphaRange": [
+        0,
+        254
+      ]
+    },
+    "material-shell": {
+      "file": "assets/sprites/material-shell.png",
+      "sourceRect": [
+        1110,
+        390,
+        1235,
+        575
+      ],
+      "width": 125,
+      "height": 185,
+      "alphaRange": [
+        0,
+        254
+      ]
+    },
+    "material-fairy": {
+      "file": "assets/sprites/material-fairy.png",
+      "sourceRect": [
+        1235,
+        390,
+        1365,
+        575
+      ],
+      "width": 130,
+      "height": 185,
+      "alphaRange": [
+        0,
+        254
+      ]
+    },
+    "material-seaweed": {
+      "file": "assets/sprites/material-seaweed.png",
+      "sourceRect": [
+        1365,
+        390,
+        1525,
+        575
+      ],
+      "width": 160,
+      "height": 185,
+      "alphaRange": [
+        0,
+        253
+      ]
+    },
+    "prop-tray": {
+      "file": "assets/sprites/prop-tray.png",
+      "sourceRect": [
+        10,
+        580,
+        490,
+        850
+      ],
+      "width": 480,
+      "height": 270,
+      "alphaRange": [
+        0,
+        253
+      ]
+    },
+    "prop-mortar": {
+      "file": "assets/sprites/prop-mortar.png",
+      "sourceRect": [
+        490,
+        575,
+        725,
+        850
+      ],
+      "width": 235,
+      "height": 275,
+      "alphaRange": [
+        0,
+        254
+      ]
+    },
+    "prop-scale": {
+      "file": "assets/sprites/prop-scale.png",
+      "sourceRect": [
+        725,
+        575,
+        1040,
+        850
+      ],
+      "width": 315,
+      "height": 275,
+      "alphaRange": [
+        0,
+        254
+      ]
+    },
+    "prop-tubes": {
+      "file": "assets/sprites/prop-tubes.png",
+      "sourceRect": [
+        1040,
+        580,
+        1290,
+        850
+      ],
+      "width": 250,
+      "height": 270,
+      "alphaRange": [
+        0,
+        253
+      ]
+    },
+    "prop-ink": {
+      "file": "assets/sprites/prop-ink.png",
+      "sourceRect": [
+        1310,
+        575,
+        1525,
+        850
+      ],
+      "width": 215,
+      "height": 275,
+      "alphaRange": [
+        0,
+        253
+      ]
+    },
+    "button-craft": {
+      "file": "assets/sprites/button-craft.png",
+      "sourceRect": [
+        15,
+        865,
+        350,
+        1005
+      ],
+      "width": 335,
+      "height": 140,
+      "alphaRange": [
+        0,
+        254
+      ]
+    },
+    "button-back": {
+      "file": "assets/sprites/button-back.png",
+      "sourceRect": [
+        350,
+        865,
+        655,
+        1005
+      ],
+      "width": 305,
+      "height": 140,
+      "alphaRange": [
+        0,
+        254
+      ]
+    },
+    "button-next": {
+      "file": "assets/sprites/button-next.png",
+      "sourceRect": [
+        660,
+        865,
+        990,
+        1005
+      ],
+      "width": 330,
+      "height": 140,
+      "alphaRange": [
+        0,
+        254
+      ]
+    },
+    "button-settings": {
+      "file": "assets/sprites/button-settings.png",
+      "sourceRect": [
+        990,
+        865,
+        1115,
+        1005
+      ],
+      "width": 125,
+      "height": 140,
+      "alphaRange": [
+        0,
+        253
+      ]
+    },
+    "button-book": {
+      "file": "assets/sprites/button-book.png",
+      "sourceRect": [
+        1120,
+        865,
+        1245,
+        1005
+      ],
+      "width": 125,
+      "height": 140,
+      "alphaRange": [
+        0,
+        254
+      ]
+    },
+    "button-help": {
+      "file": "assets/sprites/button-help.png",
+      "sourceRect": [
+        1250,
+        865,
+        1375,
+        1005
+      ],
+      "width": 125,
+      "height": 140,
+      "alphaRange": [
+        0,
+        254
+      ]
+    },
+    "button-home": {
+      "file": "assets/sprites/button-home.png",
+      "sourceRect": [
+        1380,
+        865,
+        1525,
+        1005
+      ],
+      "width": 145,
+      "height": 140,
+      "alphaRange": [
+        0,
+        254
+      ]
+    },
+    "book-open": {
+      "file": "assets/sprites/book-open.png",
+      "source": "魔法配方书插画.png",
+      "sourceRect": [
+        104,
+        47,
+        1470,
+        969
+      ],
+      "sourceSha256": "d85527c2ec65191c9431a8b4cb1df18da7400bdd6f4415c3487e77a8871eab2c",
+      "width": 1366,
+      "height": 922,
+      "alphaRange": [
+        0,
+        254
+      ]
+    },
+    "book-closed": {
+      "file": "assets/sprites/book-closed.png",
+      "source": "华丽金饰皮革书籍插画.png",
+      "sourceRect": [
+        342,
+        21,
+        1183,
+        1006
+      ],
+      "sourceSha256": "b4b936055b2349cfde0f6df73247a5a4a1fa4530aa24f188a109a9efd8c16e27",
+      "width": 841,
+      "height": 985,
+      "alphaRange": [
+        0,
+        254
+      ]
+    }
+  }
+}
