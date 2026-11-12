@@ -132,7 +132,7 @@ function renderHud(){document.querySelector('#hud').innerHTML=[['day',s.day,'营
 function iconsInit(){
  const put=(selector,name,label)=>document.querySelectorAll(selector).forEach(e=>{e.innerHTML=icon(name);e.setAttribute('aria-label',label);e.title=label});
  put('[data-action="help"]','help','手记');put('[data-action="settle"]','moon','打烊');
- put('[data-scene="shop"]','shop','接待顾客');put('[data-scene="craft"]','bottle','制作商品');put('[data-scene="town"]','town','前往小镇');
+ put('#mainNav [data-scene="shop"]','shop','接待顾客');put('#mainNav [data-scene="craft"]','bottle','制作商品');put('#mainNav [data-scene="town"]','town','前往小镇');
  put('[data-action="toCraft"]','bottle','去制作');put('[data-action="pantry"]','cabinet','材料柜');put('[data-action="recipes"]','book','配方');
  put('[data-action="add"]','plus','加入');put('[data-action="clear"]','back','退料');put('#pourButton','pour','按住倾倒');put('#cork','bottle','封瓶');
  put('.pantry-intro [data-action="craft"]','arrow','带去工作台');put('.pantry-intro [data-action="gather"]','tree','去果园');put('[data-action="putBack"]','back','放回柜子');
