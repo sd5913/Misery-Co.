@@ -1,0 +1,38 @@
+{
+  "date": "2026-11-26",
+  "scope": "English Iteration 04 author-approved team preview",
+  "checks": [
+    {
+      "command": "node src/tools/verify.cjs",
+      "passed": true,
+      "output": "PASS: three raw-ingredient recipes, each ingredient x1, wrong recipe consumption, coins, tips, customer preferences, municipal task, pavilion threshold, harvest/day reset, persistent intermediates, return materials, max batch, malformed save.\n"
+    },
+    {
+      "command": "node src/tools/verify-garden.cjs",
+      "passed": true,
+      "output": "PASS: garden -> stock -> crafting -> customer -> municipal task -> next day; replay protection, full-stock pending, restore and old saves\n"
+    },
+    {
+      "command": "node src/tools/verify-bridge.cjs",
+      "passed": true,
+      "output": "PASS: iframe handshake, source validation, inventory sync, duplicate messages, save-and-return, DOM order\n"
+    },
+    {
+      "command": "node src/tools/verify-presentation.cjs",
+      "passed": true,
+      "output": "PASS: English runtime text, feather viewport rule, discrete walk frames, stable collecting pose, cancel-to-idle, unchanged inventory\n"
+    }
+  ],
+  "distribution": {
+    "sha256": "5c215858e930ad312f22fc7858aa35865f8411bd9944be48a75e437916f1b67b",
+    "bytes": 21352270,
+    "rebuild_matches": true,
+    "inline_scripts_parse": 8,
+    "team_zip_matches": true
+  },
+  "limits": [
+    "No independent participant full-day playtest recorded",
+    "No live-camera verification in this publication",
+    "Node/mocked DOM checks are not browser visual verification"
+  ]
+}

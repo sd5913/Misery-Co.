@@ -1,0 +1,22 @@
+/* Reference-led character atlas. All animation is lightweight 2D, not Cubism. */
+(()=>{
+ const atlas=asset('assets/sprites/residents.png');
+ const sheet=el=>el.style.backgroundImage=`url("${atlas}")`;
+ $('#shopCustomer').style.backgroundImage=`url("${asset('assets/sprites/shop-portraits.png')}")`;sheet($('#collector'));
+ $('#vnFace').style.backgroundImage=`url("${asset('assets/sprites/shop-portraits.png')}")`;
+ const cat=$('#shopCat'),layers=[$('#catSprite'),$('#catBlend')];
+ layers.forEach(el=>el.style.backgroundImage=`url("${asset('assets/sprites/cat-smooth.png')}")`);
+ let busyUntil=0,catTurn=0,catTimers=[],activeLayer=0;
+ function frame(n,immediate=false){const next=immediate?activeLayer:1-activeLayer;const el=layers[next];el.style.backgroundPosition=`${n%5*25}% ${Math.floor(n/5)*100/3}%`;el.dataset.frame=n;el.style.opacity='1';if(!immediate)layers[activeLayer].style.opacity='0';activeLayer=next;cat.dataset.frame=n}
+ function cancelCat(){catTimers.forEach(clearTimeout);catTimers=[];cat.classList.remove('affection','stretch');busyUntil=0;frame(0,true);layers[1-activeLayer].style.opacity='0'}
+ const reactions=[{name:'Yawn',frames:[[0,5],[240,6],[500,7],[1550,6],[1750,8],[2050,9],[2380,0]]},{name:'Stretch',frames:[[0,10],[220,11],[520,12],[1500,13],[1810,11],[2150,14],[2450,0]]},{name:'Nuzzle',frames:[[0,15],[260,16],[550,17],[1550,18],[1900,16],[2200,19],[2500,0]]}];
+ cancelCat();
+ cat.addEventListener('click',()=>{if(performance.now()<busyUntil)return;const r=reactions[catTurn++%3];busyUntil=performance.now()+2800;cat.dataset.reaction=r.name;cat.classList.toggle('affection',r.name==='Nuzzle');cat.classList.toggle('stretch',r.name==='Stretch');r.frames.forEach(([t,n])=>catTimers.push(setTimeout(()=>frame(n),t)));catTimers.push(setTimeout(()=>cat.classList.remove('affection','stretch'),2800))});
+ setInterval(()=>{if(scene==='shop'&&!document.hidden&&performance.now()>busyUntil){[1,2,3,4,0].forEach((f,i)=>catTimers.push(setTimeout(()=>frame(f),i*100)))}},6000);
+ const specs=[{name:'Weather Herald',row:1,path:[[1100,617],[1160,652],[1265,711],[1240,745]],speed:35},{name:'Grandpa Gardener',row:2,path:[[440,686],[460,650],[490,604],[525,579]],speed:28},{name:'Grandma Martha',row:3,path:[[1080,600],[1115,588],[1150,565],[1200,560]],speed:22},{name:'Little Shopkeeper',row:0,path:[[920,584],[980,610],[1015,639],[1060,660]],speed:32}];
+ const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ const actors=specs.map((a,i)=>{const el=document.createElement('button');el.className='resident-town';el.setAttribute('aria-label',a.name);el.title=a.name;el.innerHTML='<span class="resident-shadow"></span><span class="resident-sprite"></span><span class="resident-name"></span>';el.querySelector('.resident-name').textContent=a.name;const sp=el.querySelector('.resident-sprite');sheet(sp);sp.style.backgroundPosition=`0 ${a.row*100/3}%`;$('#townResidents').append(el);el.addEventListener('click',()=>{if(a.row===0){setScene('shop');return}const r=game.visit('resident-'+a.row);save();render();modal(`<h2>${a.name}</h2><p>${['','“The rain feels a little lighter. ”','“The orchard berries are ripe. ”','“Tonight, I’d like a peaceful night’s rest. ”'][a.row]}</p><small>${r.ok?'Warmth +1':'Already greeted today'}</small><p><button class="paper" data-action="close">Wave goodbye</button></p>`)});return{...a,el,sp,x:a.path[0][0],y:a.path[0][1],target:1,dir:1,wait:i*1.9,facing:1}});
+ function place(a,col){a.el.style.left=a.x+'px';a.el.style.top=a.y+'px';a.el.style.zIndex=Math.round(a.y);const scale=.65+(a.y-550)/600;a.el.style.setProperty('--size',scale);a.el.style.setProperty('--face',a.facing);a.sp.style.backgroundPosition=`${col*100/3}% ${a.row*100/3}%`}
+ let last=performance.now();function animate(t){const dt=Math.min(.06,(t-last)/1000);last=t;if(scene==='town'&&!document.hidden){actors.forEach(a=>{let col=0;if(!$('#modal').open&&!reducedMotion){if(a.wait>0)a.wait-=dt;else{const p=a.path[a.target],dx=p[0]-a.x,dy=p[1]-a.y,d=Math.hypot(dx,dy),step=a.speed*dt;if(d<step+1){a.x=p[0];a.y=p[1];if(a.target===a.path.length-1||a.target===0){a.dir*=-1;a.wait=2.5}a.target+=a.dir}else{a.x+=dx/d*step;a.y+=dy/d*step;if(Math.abs(dx)>1)a.facing=dx>=0?1:-1;col=1+Math.floor(t/240)%2}}}place(a,col)})}requestAnimationFrame(animate)}actors.forEach(a=>place(a,0));requestAnimationFrame(animate);
+ document.addEventListener('visibilitychange',()=>{if(document.hidden)cancelCat()});
+})();
