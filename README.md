@@ -49,7 +49,7 @@ The game utilizes mouse-based **Point-and-Click** and **Drag-and-Drop** interact
 ## 4. Prerequisites, Setup & How to Run
 
 ### Current Playable Download
-* **Latest test version:** [Iteration 04 — Integrated Garden Demo](https://github.com/sd5913/Misery-Co./blob/demo/orchard-animation/00-START-HERE.md). Download **开始游戏.html** and open it in Chrome. This is a downloadable build; GitHub file preview does not play it.
+* **Latest test version:** [Iteration 04 — Integrated Garden Demo](https://github.com/sd5913/Misery-Co./blob/demo/orchard-animation/00-START-HERE.md). Download **4-LATEST-Start-Game.html** and open it in Chrome. This is a downloadable build; GitHub file preview does not play it.
 
 ### Prerequisites
 * A modern desktop web browser (latest version of Google Chrome, Firefox, Microsoft Edge, or Safari recommended).
