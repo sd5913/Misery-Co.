@@ -1,15 +1,5 @@
 # Misery & Co.
 
-## Latest build — Iteration 04
-
-**[Download and play](https://github.com/sd5913/Misery-Co./raw/refs/heads/main/4-LATEST-Start-Game.html)** · **[Browse editable source](https://github.com/sd5913/Misery-Co./tree/main/4-LATEST-Source/misery-complete)** · **[Start here](00-START-HERE.md)**
-
-The latest source and standalone playable game are now on `main`. Download `4-LATEST-Start-Game.html` and open it in desktop Chrome. Camera gestures need camera permission and network access for the recognition model. Earlier iterations remain on `demo/orchard-animation`.
-
-Generated standalone HTML packages are marked in `.gitattributes` so language statistics reflect the editable source. The packaged games remain available to download and play. This changes file classification, not game behavior.
-
----
-
 > A Dark & Whimsical 2D Narrative Management Game  
 > **Course Project:** [SD5913 Group Project](https://canvas.polyu.edu.hk/courses/4750)  
 > **Repository:** [https://github.com/sd5913/Misery-Co.](https://github.com/sd5913/Misery-Co.)
@@ -59,7 +49,7 @@ The game utilizes mouse-based **Point-and-Click** and **Drag-and-Drop** interact
 ## 4. Prerequisites, Setup & How to Run
 
 ### Current Playable Download
-* **Latest test version:** [Iteration 04 — Integrated Garden Demo](https://github.com/sd5913/Misery-Co./blob/main/00-START-HERE.md). Download **4-LATEST-Start-Game.html** and open it in Chrome. This is a downloadable build; GitHub file preview does not play it.
+* **Latest test version:** [Iteration 04 — Integrated Garden Demo](https://github.com/sd5913/Misery-Co./blob/demo/orchard-animation/00-START-HERE.md). Download **4-LATEST-Start-Game.html** and open it in Chrome. This is a downloadable build; GitHub file preview does not play it.
 
 ### Prerequisites
 * A modern desktop web browser (latest version of Google Chrome, Firefox, Microsoft Edge, or Safari recommended).
@@ -68,7 +58,7 @@ The game utilizes mouse-based **Point-and-Click** and **Drag-and-Drop** interact
 ### Local Setup & Execution
 1. **Clone the repository:**
    ```bash
-   git clone --branch main https://github.com/sd5913/Misery-Co..git
+   git clone --branch demo/orchard-animation https://github.com/sd5913/Misery-Co..git
    cd Misery-Co.
    ```
 
