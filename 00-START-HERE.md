@@ -1,5 +1,9 @@
 # LATEST — Start Here
 
+**[Browse the latest editable source — 4-LATEST-Source/](https://github.com/sd5913/Misery-Co./tree/demo/orchard-animation/4-LATEST-Source)** · [Source structure, run and packaging instructions](https://github.com/sd5913/Misery-Co./tree/demo/orchard-animation/4-LATEST-Source/README.md)
+
+The latest source is now extracted into a normal repository directory. The single-file game and matching ZIP remain available.
+
 **Current test build: Iteration 04 — Integrated Garden Demo**  
 **Uploaded: 26 November 2026 · Branch: `demo/orchard-animation`**
 

@@ -1,0 +1,14 @@
+const vm=require('node:vm'),fs=require('node:fs'),assert=require('node:assert/strict');
+const {make}=require('../game.js');const game=make();let messages=[],onMessage,returned,saves=0;
+const child={postMessage:d=>messages.push(d)},nodes={};for(const id of ['#gardenOverlay','#gardenFrame','#gardenConnection','#leaveGarden'])nodes[id]={hidden:true,contentWindow:child,removeAttribute(){}};
+const env={document:{querySelector:id=>nodes[id]},game,s:game.s,scene:'pantry',titles:{pantry:'材料柜'},FIELD_HTML:'<!doctype html>',setTimeout:()=>1,clearTimeout(){},save(){saves++},render(){},setScene:s=>returned=s,cancelInput(){},renderProgress(){},heating:true,window:{addEventListener:(_,fn)=>onMessage=fn}};
+const ctx=vm.createContext(env);vm.runInContext(fs.readFileSync('misery-complete/garden-bridge.js','utf8')+'\nGardenBridge.open();',ctx);
+assert.equal(nodes['#gardenOverlay'].hidden,false);assert.equal(nodes['#gardenFrame'].srcdoc,'<!doctype html>');
+onMessage({source:child,data:{type:'misery-field-hello'}});assert.equal(messages[0].type,'misery-field-init');
+onMessage({source:child,data:{type:'misery-field-ready'}});
+const snapshot={version:1,count:3,plots:Array(6).fill({stage:'seed',water:0,growth:0})};
+onMessage({source:{},data:{type:'misery-field-save',snapshot}});assert.equal(game.s.stock.flower,3);
+onMessage({source:child,data:{type:'misery-field-save',snapshot}});onMessage({source:child,data:{type:'misery-field-save',snapshot}});assert.equal(game.s.stock.flower,6);
+nodes['#leaveGarden'].onclick();assert.equal(messages.at(-1).type,'misery-field-exit');onMessage({source:child,data:{type:'misery-field-closed'}});assert.equal(nodes['#gardenOverlay'].hidden,true);assert.equal(returned,'pantry');assert.equal(nodes['#gardenFrame'].src,'about:blank');
+const html=fs.readFileSync('misery-complete/index.html','utf8');assert(html.indexOf('id="gardenOverlay"')<html.indexOf('src="garden-bridge.js"'));
+console.log('PASS: iframe handshake, source validation, inventory sync, duplicate messages, save-and-return, DOM order');
