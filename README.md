@@ -14,6 +14,18 @@ A hand-drawn dark-fairytale shop-management prototype: sell gloomy goods, craft 
 
 Alternatively, [download the standalone HTML](https://github.com/sd5913/Misery-Co./raw/refs/heads/main/Start-Game.html). GitHub's code preview does not run HTML. The package is the English feather-fix revision approved by the project author for team review.
 
+## Game screenshots
+
+Captured from the English Iteration 04 playable build on 26 November 2026.
+
+| Shop — meet customers | Workbench — craft products |
+| --- | --- |
+| ![Shop and customer dialogue](docs/screenshots/shop.jpg) | ![Alchemy workbench and recipe book](docs/screenshots/workbench.jpg) |
+| **Rainy town — visit residents** | **Old Orchard — gather ingredients** |
+| ![Rainy town with interactive buildings and residents](docs/screenshots/town.jpg) | ![Old Orchard gathering area](docs/screenshots/orchard.jpg) |
+
+These are actual in-game captures, not concept art. [Capture details](docs/screenshots/README.md).
+
 ## Reviewer and teammate entry points
 
 | Need | Open |
