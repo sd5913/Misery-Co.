@@ -1,3 +1,8 @@
+> **ARCHIVED — Iteration 01: Orchard Demo**  
+> This is an earlier build retained for development history. For current playtests use **Iteration 04 — Integrated Garden Demo**: [latest game](https://github.com/sd5913/Misery-Co./blob/demo/orchard-animation/%E5%BC%80%E5%A7%8B%E6%B8%B8%E6%88%8F.html). See **[00-START-HERE.md](https://github.com/sd5913/Misery-Co./blob/demo/orchard-animation/00-START-HERE.md)** for the full iteration order and matching source archives.
+
+---
+
 # Misery & Co. — Orchard Animation Demo
 
 Branch: `demo/orchard-animation`. This prototype is added separately from the existing course documentation.
