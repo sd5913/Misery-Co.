@@ -91,13 +91,13 @@ The game utilizes mouse-based **Point-and-Click** and **Drag-and-Drop** interact
 
 ### Weekly Tutorial Log & Progress
 
-| Course Week | Delivery Focus | Weekly Goals & Completed Work | Playtest Feedback & Blockers | Next Steps & Adjustments |
-| :--- | :--- | :--- | :--- | :--- |
-| **Nov 5, 2026** | First Working Interaction | Finalized game concept, 10-panel Game Storyboard, and core System Workflow; initialized `sd5913` repository and Team Scrum Board. | Need to balance the tension between Public Quotas and Hidden Warmth so players feel meaningful risk. | Build the foundational scene switching prototype and UI layout. |
-| **Nov 12, 2026** | Core Experience Integration | *(To be updated)* | *(To be updated)* | *(To be updated)* |
-| **Nov 19, 2026** | Playtest & Feedback | *(To be updated)* | *(To be updated)* | *(To be updated)* |
-| **Nov 26, 2026** | Release Candidate | *(To be updated)* | *(To be updated)* | *(To be updated)* |
-| **Dec 3, 2026** | Final Assessment | *(To be updated)* | *(To be updated)* | *(To be updated)* |
+| *Course Week* | *Delivery Focus* | *Weekly Goals & Completed Work* | *Playtest Feedback & Blockers* | *Next Steps & Adjustments* |
+| ----- | ----- | ----- | ----- | ----- |
+| *Nov 5, 2026* | First Work Interaction | Finalized the game concept, 10-panel storyboard, and core system workflow; initialized the `sd5913` repository and team Scrum board. | Needed to balance tension between public quotas and hidden warmth so choices feel risky in a meaningful way. | Build basic screen switching prototypes and UI layout. |
+| *Nov 12, 2026* | Core Experience Integration | Worked on multi-screen switching, alchemy crafting flow, and gathering in the Old Orchard, and ran playtests. | Playtests surfaced 5 UX and flow issues: (1) Old Orchard needed a glass-bottle rainwater popup when clicking the sky; (2) material prep steps on the crafting screen felt extra and should be removed; (3) recipes should clearly require 1 of each ingredient; (4) the glass jar tilted/faced the wrong way during hold-to-pour; (5) on rainy days, clicking the green "Back to Counter to Deliver" box in the top-right after crafting did not switch directly back to the counter/customer view. | Remove material prep steps and set recipes to 1 of each ingredient; fix glass jar pouring direction; fix the green "Back to Counter to Deliver" button jump; add sky-click rainwater collection in the Old Orchard. |
+| *Nov 19, 2026* | Playtesting & Feedback | Applied fixes from earlier playtests and added a MediaPipe hand-gesture **Gesture Flower Field** (enter via `✿` in Town or Old Orchard, or `✿ Flower Field` in the Material Cabinet; top-left back button returns to the previous view; 6 plots with 3 Evening Bellflowers each; hover fingertip spot for a gold border or click plot number to select; pinch-and-release to plant, open palm for rain, raise hand to speed growth, pinch-and-pull-up to harvest; watered flowers grow slowly when the view opens, ~45s to mature, faster with raised hand; harvesting 3 flowers adds 3 Evening Bellflowers to the cabinet, cap 99 with extras kept and auto-filled; "Watch Demo" shows actions without changing inventory or the real flower field; saved with game progress; camera turns off on exit, no offline growth while away; other materials still come from Old Orchard with sky rainwater). | Switching plots without closing a gesture first can cause accidental triggers; rules like no growth while away and "Watch Demo" not affecting inventory or the real field need clearer UI/instructions. | Remind players to release/close gestures before switching plots, keep improving gesture stability and guidance, and continue builds and balance testing. |
+| *Nov 26, 2026* | Release Candidate | *(To be updated)* | *(To be updated)* | *(To be updated)* |
+| *Dec 3, 2026* | Final Evaluation | *(To be updated)* | *(To be updated)* | *(To be updated)* |
 
 ---
 
