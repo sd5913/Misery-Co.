@@ -1,0 +1,4 @@
+# Standalone packages are generated build outputs, not editable source.
+# Keep them downloadable/playable; exclude only these artifacts from Linguist stats.
+/4-LATEST-Start-Game.html linguist-generated=true
+/4-LATEST-Source/misery-complete/field/掌心花田-直接打开.html linguist-generated=true
