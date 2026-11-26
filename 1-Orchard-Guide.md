@@ -1,5 +1,5 @@
 > **ARCHIVED — Iteration 01: Orchard Demo**  
-> This is an earlier build retained for development history. For current playtests use **Iteration 04 — Integrated Garden Demo**: [latest game](https://github.com/sd5913/Misery-Co./blob/demo/orchard-animation/%E5%BC%80%E5%A7%8B%E6%B8%B8%E6%88%8F.html). See **[00-START-HERE.md](https://github.com/sd5913/Misery-Co./blob/demo/orchard-animation/00-START-HERE.md)** for the full iteration order and matching source archives.
+> This is an earlier build retained for development history. For current playtests use **Iteration 04 — Integrated Garden Demo**: [latest game](https://github.com/sd5913/Misery-Co./blob/demo/orchard-animation/4-LATEST-Start-Game.html). See **[00-START-HERE.md](https://github.com/sd5913/Misery-Co./blob/demo/orchard-animation/00-START-HERE.md)** for the full iteration order and matching source archives.
 
 ---
 
@@ -9,13 +9,13 @@ Branch: `demo/orchard-animation`. This prototype is added separately from the ex
 
 ## Play
 
-Download **Misery-Co-Orchard.html** using GitHub's **Download raw file** button, then open the downloaded file in desktop Chrome. The HTML includes its scripts, styles and images and runs offline. GitHub's file preview does not run the game. No hosted play URL is configured by this upload.
+Download **1-Orchard-Demo.html** using GitHub's **Download raw file** button, then open the downloaded file in desktop Chrome. The HTML includes its scripts, styles and images and runs offline. GitHub's file preview does not run the game. No hosted play URL is configured by this upload.
 
 In the game, select **前往小镇 → 旧果园** to try orchard gathering.
 
 ## Source
 
-Download and extract **orchard-source.zip**, then open `misery-orchard/index.html`. Editable HTML, CSS, JavaScript, required artwork, packaging scripts, the Chinese play guide and validation notes are included. No dependency installation is required.
+Download and extract **1-Orchard-Source.zip**, then open `misery-orchard/index.html`. Editable HTML, CSS, JavaScript, required artwork, packaging scripts, the Chinese play guide and validation notes are included. No dependency installation is required.
 
 Run the state-logic checks with:
 
