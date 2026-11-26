@@ -1,23 +1,4 @@
 # Misery & Co.
-
-## LATEST — Start Here
-
-**[Browse the latest editable source — 4-LATEST-Source/](https://github.com/sd5913/Misery-Co./tree/demo/orchard-animation/4-LATEST-Source)** · [Source structure, run and packaging instructions](https://github.com/sd5913/Misery-Co./tree/demo/orchard-animation/4-LATEST-Source/README.md)
-
-The latest source is now extracted into a normal repository directory. The single-file game and matching ZIP remain available.
-
-**Iteration 04 — Integrated Garden Demo** is the current test build (uploaded **26 November 2026**).
-
-**[Download the latest game — 4-LATEST-Start-Game.html](https://github.com/sd5913/Misery-Co./raw/refs/heads/demo/orchard-animation/4-LATEST-Start-Game.html)** · [Matching source](https://github.com/sd5913/Misery-Co./raw/refs/heads/demo/orchard-animation/4-LATEST-Source.zip) · **[Iteration order and play instructions](https://github.com/sd5913/Misery-Co./blob/demo/orchard-animation/00-START-HERE.md)**
-
-**01 Orchard (ARCHIVED) → 02 Residents & Cat (ARCHIVED) → 03 Visual UI (ARCHIVED) → 04 Integrated Garden (LATEST).**
-
-The playable builds are on the [`demo/orchard-animation` branch](https://github.com/sd5913/Misery-Co./tree/demo/orchard-animation). Download the latest HTML and open it in desktop Chrome; GitHub's file preview does not run it. Camera gestures need permission and network access for the recognition model. Files are prefixed with 1, 2, 3 or 4 to show iteration order directly in the file list; 4 is the latest.
-
-The sections below retain the original project/design brief; consult **[00-START-HERE.md](https://github.com/sd5913/Misery-Co./blob/demo/orchard-animation/00-START-HERE.md)** for current build selection, controls and verification limits.
-
----
-
 > A Dark & Whimsical 2D Narrative Management Game  
 > **Course Project:** [SD5913 Group Project](https://canvas.polyu.edu.hk/courses/4750)  
 > **Repository:** [https://github.com/sd5913/Misery-Co.](https://github.com/sd5913/Misery-Co.)
