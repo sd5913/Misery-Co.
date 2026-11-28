@@ -11,7 +11,7 @@ A hand-drawn dark-fairytale shop-management prototype: sell gloomy goods, craft 
 1. Download and extract the ZIP.
 2. Open **Start-Game.html** in desktop Chrome. No installation or build is needed.
 3. Allow camera access only if you want to try the gesture garden. Its recognition engine/model needs an internet connection; a demonstration mode is also available.
-4. If system is Windows，git clone https://github.com/sd5913/Misery-Co..git Misery-Co
+4. If system is Windows，git clone https://github.com/sd5913/Misery-Co. Misery-Co
 
 Alternatively, [download the standalone HTML](https://github.com/sd5913/Misery-Co./raw/refs/heads/main/Start-Game.html). GitHub's code preview does not run HTML. The package is the English feather-fix revision approved by the project author for team review.
 
@@ -44,7 +44,7 @@ These are actual in-game captures, not concept art. [Capture details](docs/scree
 Python 3 serves the source; Node.js runs the automated checks. No npm dependencies are required for these checks.
 
 ```sh
-git clone https://github.com/sd5913/Misery-Co..git misery-co
+git clone https://github.com/sd5913/Misery-Co. misery-co
 cd misery-co
 python3 -m http.server 8776 --bind 127.0.0.1 --directory src
 ```
