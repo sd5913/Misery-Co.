@@ -1,7 +1,9 @@
-/* Sound settings: independent BGM / UI-sound toggles and volumes, remembered locally. */
+/* Sound settings: independent BGM / UI-sound toggles and volumes, remembered locally.
+   The orchard (gather) scene swaps in garden.MP3; every other scene uses BGM.MP3. */
 (function () {
   'use strict';
   var audio = document.getElementById('bgm');
+  var gardenAudio = document.getElementById('gardenBgm');
   var sfx = document.getElementById('sfx');
   var button = document.getElementById('bgmToggle');
   var panel = document.getElementById('soundPanel');
@@ -12,6 +14,7 @@
   var bgmValue = document.getElementById('bgmValue');
   var sfxValue = document.getElementById('sfxValue');
   var closeBtn = document.getElementById('soundPanelClose');
+  var stage = document.getElementById('stage');
   if (!audio || !button) return;
 
   var KEY = 'misery-sound';
@@ -27,13 +30,19 @@
   } catch (e) {}
 
   audio.loop = true;
+  if (gardenAudio) gardenAudio.loop = true;
+  var currentBgm = audio;
 
   function persist() {
     try { localStorage.setItem(KEY, JSON.stringify(config)); } catch (e) {}
   }
   function apply() {
-    audio.volume = config.bgmVol / 100;
-    audio.muted = !config.bgmOn;
+    var volume = config.bgmVol / 100;
+    [audio, gardenAudio].forEach(function (element) {
+      if (!element) return;
+      element.volume = volume;
+      element.muted = !config.bgmOn;
+    });
     if (sfx) { sfx.volume = config.sfxVol / 100; sfx.muted = !config.sfxOn; }
     if (bgmVolume) bgmVolume.value = config.bgmVol;
     if (sfxVolume) sfxVolume.value = config.sfxVol;
@@ -57,8 +66,8 @@
   var started = false;
   function start() {
     if (!config.bgmOn) return;
-    if (started && !audio.paused) return;
-    var promise = audio.play();
+    if (started && !currentBgm.paused) return;
+    var promise = currentBgm.play();
     if (promise && typeof promise.catch === 'function') {
       promise.then(function () { started = true; }).catch(function () { started = false; });
     } else {
@@ -67,6 +76,24 @@
   }
   document.addEventListener('pointerdown', start);
   document.addEventListener('keydown', start);
+
+  function applyScene(name) {
+    var target = name === 'gather' && gardenAudio ? gardenAudio : audio;
+    if (target === currentBgm) return;
+    currentBgm.pause();
+    currentBgm = target;
+    if (config.bgmOn && started) {
+      var promise = currentBgm.play();
+      if (promise && typeof promise.catch === 'function') promise.catch(function () {});
+    }
+  }
+  if (stage) {
+    applyScene(stage.dataset.scene);
+    if (window.MutationObserver) {
+      new MutationObserver(function () { applyScene(stage.dataset.scene); })
+        .observe(stage, { attributes: true, attributeFilter: ['data-scene'] });
+    }
+  }
 
   function playSfx() {
     if (!config.sfxOn || !sfx) return;
@@ -105,7 +132,7 @@
   if (bgmSwitch) bgmSwitch.addEventListener('click', function (event) {
     event.stopPropagation();
     config.bgmOn = !config.bgmOn;
-    if (config.bgmOn) start(); else audio.pause();
+    if (config.bgmOn) start(); else currentBgm.pause();
     apply(); persist();
   });
   if (sfxSwitch) sfxSwitch.addEventListener('click', function (event) {
