@@ -14,6 +14,7 @@
 .town-walker.two{width:22px;height:55px;opacity:.8}
 .resource{min-width:80px}.resource img{width:59px;height:57px}.resource span{font-size:16px;padding:3px 7px}.resource[data-id='rain'] img{width:48px;height:66px}.resource[data-id='feather'] img,.resource[data-id='leaf'] img{transform:rotate(-15deg) scaleY(.5)}.resource[data-id='flower']::after{content:'';position:absolute;left:49%;top:49px;width:3px;height:22px;background:#768057;transform:rotate(-8deg);z-index:-1}.resource[data-id='berries'] img{width:67px;height:80px}.resource[data-id='mushroom'] img{width:52px;height:48px}
 @keyframes shopkeeper-walk{from{background-position:0 0}to{background-position:-368px 0}}@keyframes shopkeeper-collect{from{background-position:0 -123px}to{background-position:-368px -123px}}@keyframes town-sprite{from{background-position:0 0}to{background-position:-172px 0}}
+.sound-wrap{position:relative}#soundPanel{position:absolute;top:calc(100% + 12px);right:0;width:312px;z-index:30;padding:18px 20px 20px;color:#443326;background:linear-gradient(135deg,#ecd3acfa,#cfad7ef5);border:7px double #684932;border-radius:15px 7px 18px 9px;box-shadow:0 12px 32px #101b1e99;text-shadow:none;font-size:19px}#soundPanel h3{font-weight:400;letter-spacing:4px;font-size:21px;margin:0 0 14px;color:#5a4128}.sound-row{margin-top:14px}.sound-row-top{display:flex;justify-content:space-between;align-items:center;gap:12px}.sound-switch{border:0;background:none;color:#443326;font:inherit;font-size:19px;padding:2px 0;cursor:pointer}.sound-switch::before{content:'◉ ';color:#6b8a52}.sound-switch.off{opacity:.5;text-decoration:line-through}.sound-switch.off::before{content:'○ ';color:#8a6b4f}.sound-row input[type=range]{width:100%;height:8px;margin:8px 0 0;accent-color:#8a6b3f;cursor:pointer}.sound-close{position:absolute;right:8px;top:4px;border:0;background:none;color:#68482e;font-size:26px;line-height:1;cursor:pointer}
 .festival-lantern{display:none;position:absolute;left:1420px;top:565px;width:20px;height:30px;border:3px solid #4b3b28;border-radius:30%;background:#edc581;box-shadow:0 0 25px 10px #edc58155;animation:lamp 3s infinite}.festival .festival-lantern{display:block}.warmer .town-glow{width:120px;height:135px;background:radial-gradient(#ffcc8977,transparent 70%)}.festival-guest{display:none;left:1440px;top:625px;transform:scale(.75)}.guest-b{left:1365px;top:648px;transform:scale(.68)}.festival .festival-guest{display:block}
 
 /* Reference characters split into overlapping transparent layers. */
@@ -131,7 +132,7 @@
 </style></head><body>
 <main id="stage" data-scene="shop">
 <img id="background" data-asset="assets/backgrounds/shop-clean.jpg" alt="Hand-drawn alchemy shop in a rainy European town" draggable="false"><div class="vignette"></div><div id="englishShopSign" aria-hidden="true">THE RAINY-DAY SHOP</div>
-<header id="header"><div class="brand"><small>MISERY &amp; CO.</small><h1 id="sceneTitle">The Rainy-Day Shop</h1></div><div id="hud"></div><button class="paper" id="bgmToggle" aria-label="Toggle background music" title="Toggle music">♪</button><button class="paper" data-action="help">?</button><button class="paper" data-action="settle">Close Shop</button></header>
+<header id="header"><div class="brand"><small>MISERY &amp; CO.</small><h1 id="sceneTitle">The Rainy-Day Shop</h1></div><div id="hud"></div><div class="sound-wrap"><button class="paper" id="bgmToggle" aria-label="Sound settings" title="Sound settings" aria-expanded="false">♪</button><div id="soundPanel" hidden aria-label="Sound settings"><button class="sound-close" id="soundPanelClose" aria-label="Close">×</button><h3>SOUND</h3><div class="sound-row"><div class="sound-row-top"><button class="sound-switch" id="bgmSwitch" aria-pressed="true">♫ Music</button><span id="bgmValue">22%</span></div><input type="range" id="bgmVolume" min="0" max="100" value="22" aria-label="Music volume"></div><div class="sound-row"><div class="sound-row-top"><button class="sound-switch" id="sfxSwitch" aria-pressed="true">♬ UI Sounds</button><span id="sfxValue">30%</span></div><input type="range" id="sfxVolume" min="0" max="100" value="30" aria-label="UI sound volume"></div></div></div><button class="paper" data-action="help">?</button><button class="paper" data-action="settle">Close Shop</button></header>
 <section id="shopScene" class="scene"><div id="shopPuppets" aria-hidden="true"><div class="puppet bird-body"></div><div class="puppet bird-head"></div><div class="puppet girl-body"></div><div class="girl-head-group"><div class="puppet girl-head"></div><span class="soft-blink"></span><span class="soft-blink blink-right"></span></div><div class="cat-group"><div class="puppet cat-body"></div></div><div class="puppet bow"></div></div><button class="rain-collect" data-action="rain" aria-label="Collect rainwater"><img data-asset="assets/sprites/bottle-empty.png" alt=""><span>Rainwater +3</span></button><aside class="parchment order"><small>Customer  <span id="orderNumber">1</span>  </small><h2 id="customerName"></h2><p id="customerText"></p><div id="orderArt"></div><button class="paper" data-action="toCraft" aria-label="Go to workbench">Go to workbench →</button><div id="customerReply" role="status"></div></aside><div id="shopCustomer" class="resident-sprite" aria-hidden="true"></div><button id="shopCat" aria-label="Pet the black cat" ><span id="catSprite"></span><span id="catBlend" aria-hidden="true"></span><span id="catHearts" aria-hidden="true">♡</span></button><div id="catStatus" role="status" aria-live="polite"></div><aside id="vnDialogue" aria-label="Customer dialogue"><div class="vn-portrait"><div id="vnFace" class="resident-sprite"></div></div><div class="vn-copy"><h2 id="vnSpeaker"></h2><p id="vnLine"></p></div><div class="vn-order" id="vnOrder"></div><button class="paper vn-accept" data-action="toCraft" aria-label="Craft for customer" title="Craft">→</button></aside><div class="shop-lamp"></div><aside class="sales-panel"><h2>Ready to deliver</h2><div id="saleProducts"></div><button class="paper traditional" data-action="traditional"></button></aside></section>
 <section id="craftScene" class="scene" hidden>
 <button class="bench-note" id="benchHint" aria-label="Crafting hint" disabled></button><button class="paper cabinet-link" data-action="pantry">Cabinet</button>
@@ -432,31 +433,78 @@ const GardenBridge=(()=>{
  });
  return {open};
 })();
-</script><script>/* Background music and UI click sound, with a shared mute toggle. */
+</script><script>/* Sound settings: independent BGM / UI-sound toggles and volumes, remembered locally. */
 (function () {
   'use strict';
   var audio = document.getElementById('bgm');
   var sfx = document.getElementById('sfx');
   var button = document.getElementById('bgmToggle');
+  var panel = document.getElementById('soundPanel');
+  var bgmSwitch = document.getElementById('bgmSwitch');
+  var sfxSwitch = document.getElementById('sfxSwitch');
+  var bgmVolume = document.getElementById('bgmVolume');
+  var sfxVolume = document.getElementById('sfxVolume');
+  var bgmValue = document.getElementById('bgmValue');
+  var sfxValue = document.getElementById('sfxValue');
+  var closeBtn = document.getElementById('soundPanelClose');
   if (!audio || !button) return;
 
-  audio.volume = 0.22;
+  var KEY = 'misery-sound';
+  var config = { bgmOn: true, sfxOn: true, bgmVol: 22, sfxVol: 30 };
+  try {
+    var saved = JSON.parse(localStorage.getItem(KEY) || 'null');
+    if (saved) {
+      if (typeof saved.bgmOn === 'boolean') config.bgmOn = saved.bgmOn;
+      if (typeof saved.sfxOn === 'boolean') config.sfxOn = saved.sfxOn;
+      if (typeof saved.bgmVol === 'number') config.bgmVol = Math.min(100, Math.max(0, saved.bgmVol));
+      if (typeof saved.sfxVol === 'number') config.sfxVol = Math.min(100, Math.max(0, saved.sfxVol));
+    }
+  } catch (e) {}
+
   audio.loop = true;
-  if (sfx) sfx.volume = 0.3;
+
+  function persist() {
+    try { localStorage.setItem(KEY, JSON.stringify(config)); } catch (e) {}
+  }
+  function apply() {
+    audio.volume = config.bgmVol / 100;
+    audio.muted = !config.bgmOn;
+    if (sfx) { sfx.volume = config.sfxVol / 100; sfx.muted = !config.sfxOn; }
+    if (bgmVolume) bgmVolume.value = config.bgmVol;
+    if (sfxVolume) sfxVolume.value = config.sfxVol;
+    if (bgmValue) bgmValue.textContent = config.bgmVol + '%';
+    if (sfxValue) sfxValue.textContent = config.sfxVol + '%';
+    if (bgmSwitch) {
+      bgmSwitch.classList.toggle('off', !config.bgmOn);
+      bgmSwitch.setAttribute('aria-pressed', String(config.bgmOn));
+    }
+    if (sfxSwitch) {
+      sfxSwitch.classList.toggle('off', !config.sfxOn);
+      sfxSwitch.setAttribute('aria-pressed', String(config.sfxOn));
+    }
+    var anyOn = config.bgmOn || config.sfxOn;
+    button.style.opacity = anyOn ? '1' : '.45';
+    button.setAttribute('aria-label', 'Sound settings: music ' + (config.bgmOn ? 'on' : 'off') + ', UI sound ' + (config.sfxOn ? 'on' : 'off'));
+    button.title = anyOn ? 'Sound settings' : 'Sound off';
+  }
+  apply();
 
   var started = false;
   function start() {
-    if (started) return;
-    started = true;
+    if (!config.bgmOn) return;
+    if (started && !audio.paused) return;
     var promise = audio.play();
-    if (promise && typeof promise.catch === 'function') promise.catch(function () {});
+    if (promise && typeof promise.catch === 'function') {
+      promise.then(function () { started = true; }).catch(function () { started = false; });
+    } else {
+      started = true;
+    }
   }
-  document.addEventListener('pointerdown', start, { once: true });
-  document.addEventListener('keydown', start, { once: true });
+  document.addEventListener('pointerdown', start);
+  document.addEventListener('keydown', start);
 
-  var muted = false;
   function playSfx() {
-    if (muted || !sfx) return;
+    if (!config.sfxOn || !sfx) return;
     sfx.pause();
     sfx.currentTime = 0;
     var promise = sfx.play();
@@ -466,20 +514,47 @@ const GardenBridge=(()=>{
   document.addEventListener('pointerdown', function (event) {
     var t = event.target;
     if (!t || !t.closest) return;
-    if (t.closest('#bgmToggle')) return;
+    if (t.closest('#soundPanel') || t.closest('#bgmToggle')) return;
     if (t.closest(clickable)) playSfx();
   }, true);
 
+  function setPanel(open) {
+    if (!panel) return;
+    panel.hidden = !open;
+    button.setAttribute('aria-expanded', String(open));
+  }
   button.addEventListener('click', function (event) {
     event.stopPropagation();
+    setPanel(panel ? panel.hidden : false);
     start();
-    muted = !muted;
-    audio.muted = muted;
-    if (sfx) sfx.muted = muted;
-    button.style.opacity = muted ? '.45' : '1';
-    button.style.textDecoration = muted ? 'line-through' : 'none';
-    button.setAttribute('aria-label', muted ? 'Unmute sound' : 'Mute sound');
-    button.title = muted ? 'Sound off' : 'Sound on';
+  });
+  if (closeBtn) closeBtn.addEventListener('click', function (event) {
+    event.stopPropagation();
+    setPanel(false);
+  });
+  document.addEventListener('click', function (event) {
+    if (!event.target || !event.target.closest) return;
+    if (!event.target.closest('.sound-wrap')) setPanel(false);
+  });
+
+  if (bgmSwitch) bgmSwitch.addEventListener('click', function (event) {
+    event.stopPropagation();
+    config.bgmOn = !config.bgmOn;
+    if (config.bgmOn) start(); else audio.pause();
+    apply(); persist();
+  });
+  if (sfxSwitch) sfxSwitch.addEventListener('click', function (event) {
+    event.stopPropagation();
+    config.sfxOn = !config.sfxOn;
+    apply(); persist();
+  });
+  if (bgmVolume) bgmVolume.addEventListener('input', function () {
+    config.bgmVol = Number(this.value);
+    apply(); persist();
+  });
+  if (sfxVolume) sfxVolume.addEventListener('input', function () {
+    config.sfxVol = Number(this.value);
+    apply(); persist();
   });
 })();
 </script></body></html>
