@@ -17,10 +17,12 @@ css='\n'.join((root/n).read_text() for n in ['style.css','motion.css','icons.css
 keys={p:'--image-'+str(i) for i,p in enumerate(assets)}
 css=re.sub(r"url\(['\"]?(assets/[^'\")]+)['\"]?\)",lambda m:'var('+keys[m[1]]+')',css)
 html=(root/'index.html').read_text().replace('<link rel="stylesheet" href="style.css">','<style>'+css+'</style>')
+bgm=base64.b64encode((root/'BGM.MP3').read_bytes()).decode()
+html=html.replace('src="BGM.MP3"','src="data:audio/mpeg;base64,'+bgm+'"')
 for n in ['motion.css','icons.css','garden.css']:html=html.replace(f'<link rel="stylesheet" href="{n}">','')
 html=re.sub(r'src="(assets/[^\"]+)"',lambda m:'data-asset="'+m[1]+'"',html)
 hydrate='\nObject.entries(ASSETS).forEach(([p,u],i)=>document.documentElement.style.setProperty("--image-"+i,`url("${u}")`));\ndocument.querySelectorAll("[data-asset]").forEach(e=>{e.src=ASSETS[e.dataset.asset]});\ndocument.querySelectorAll(".collector,.town-walker.one").forEach(e=>{e.style.backgroundImage=`url("${ASSETS["assets/sprites/residents.png"]}")`});\n'
-for n in ['icons.js','game.js','orchard.js','ui.js','motion.js','residents.js','guidance.js','garden-bridge.js']:
+for n in ['icons.js','game.js','orchard.js','ui.js','motion.js','residents.js','guidance.js','garden-bridge.js','audio.js']:
  script=(root/n).read_text()
  if n=='ui.js':script=script.replace('const ASSETS={};','const ASSETS='+json.dumps(assets)+';'+hydrate)
  if n=='garden-bridge.js':script='const FIELD_HTML='+json.dumps(field).replace('<','\\u003c')+';\n'+script
