@@ -78,6 +78,16 @@ Shop sales, inventory, three recipes, hold-to-heat/stir/pour crafting, orchard g
 
 Earlier builds are retained on [demo/orchard-animation](https://github.com/sd5913/Misery-Co./tree/demo/orchard-animation); they are historical versions, not the current presentation download.
 
+## Team
+
+This prototype is built and maintained by the SD5913 course-project team:
+- Yang Shuhan(Baqidiguadacangshu🐹)
+- Luo Yadan(59Yadan)
+- Yan Xiyuan(xy-art-web)
+- Tang Siqi(kiki457-ai)
+
+Deployment and documentation upkeep: @kiki457-ai.
+
 ## Concept art, credits and AI assistance
 
 [Storyboard](storyboard.jpg) · [Workflow](workflow.jpg)
