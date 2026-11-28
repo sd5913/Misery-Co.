@@ -1,10 +1,13 @@
 /* Sound settings: independent BGM / UI-sound toggles and volumes, remembered locally.
-   The orchard (gather) scene swaps in garden.MP3; every other scene uses BGM.MP3. */
+   The orchard (gather) scene swaps in garden.MP3; every other scene uses BGM.MP3.
+   Stirring the kettle loops bottle.MP3 for as long as the stir gesture lasts. */
 (function () {
   'use strict';
   var audio = document.getElementById('bgm');
   var gardenAudio = document.getElementById('gardenBgm');
   var sfx = document.getElementById('sfx');
+  var bottleSfx = document.getElementById('bottleSfx');
+  var kettleStation = document.getElementById('kettleStation');
   var button = document.getElementById('bgmToggle');
   var panel = document.getElementById('soundPanel');
   var bgmSwitch = document.getElementById('bgmSwitch');
@@ -31,10 +34,24 @@
 
   audio.loop = true;
   if (gardenAudio) gardenAudio.loop = true;
+  if (bottleSfx) bottleSfx.loop = true;
   var currentBgm = audio;
+  var stirring = false;
 
   function persist() {
     try { localStorage.setItem(KEY, JSON.stringify(config)); } catch (e) {}
+  }
+  function syncStir() {
+    if (!bottleSfx) return;
+    if (stirring && config.sfxOn) {
+      if (bottleSfx.paused) {
+        var promise = bottleSfx.play();
+        if (promise && typeof promise.catch === 'function') promise.catch(function () {});
+      }
+    } else {
+      bottleSfx.pause();
+      bottleSfx.currentTime = 0;
+    }
   }
   function apply() {
     var volume = config.bgmVol / 100;
@@ -44,6 +61,8 @@
       element.muted = !config.bgmOn;
     });
     if (sfx) { sfx.volume = config.sfxVol / 100; sfx.muted = !config.sfxOn; }
+    if (bottleSfx) { bottleSfx.volume = config.sfxVol / 100; bottleSfx.muted = !config.sfxOn; }
+    syncStir();
     if (bgmVolume) bgmVolume.value = config.bgmVol;
     if (sfxVolume) sfxVolume.value = config.sfxVol;
     if (bgmValue) bgmValue.textContent = config.bgmVol + '%';
@@ -93,6 +112,13 @@
       new MutationObserver(function () { applyScene(stage.dataset.scene); })
         .observe(stage, { attributes: true, attributeFilter: ['data-scene'] });
     }
+  }
+
+  if (kettleStation && window.MutationObserver) {
+    new MutationObserver(function () {
+      var on = kettleStation.classList.contains('stirring');
+      if (on !== stirring) { stirring = on; syncStir(); }
+    }).observe(kettleStation, { attributes: true, attributeFilter: ['class'] });
   }
 
   function playSfx() {

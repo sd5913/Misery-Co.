@@ -23,6 +23,8 @@ sfx=base64.b64encode((root/'UI.MP3').read_bytes()).decode()
 html=html.replace('src="UI.MP3"','src="data:audio/mpeg;base64,'+sfx+'"')
 garden=base64.b64encode((root/'garden.MP3').read_bytes()).decode()
 html=html.replace('src="garden.MP3"','src="data:audio/mpeg;base64,'+garden+'"')
+bottle=base64.b64encode((root/'bottle.MP3').read_bytes()).decode()
+html=html.replace('src="bottle.MP3"','src="data:audio/mpeg;base64,'+bottle+'"')
 for n in ['motion.css','icons.css','garden.css']:html=html.replace(f'<link rel="stylesheet" href="{n}">','')
 html=re.sub(r'src="(assets/[^\"]+)"',lambda m:'data-asset="'+m[1]+'"',html)
 hydrate='\nObject.entries(ASSETS).forEach(([p,u],i)=>document.documentElement.style.setProperty("--image-"+i,`url("${u}")`));\ndocument.querySelectorAll("[data-asset]").forEach(e=>{e.src=ASSETS[e.dataset.asset]});\ndocument.querySelectorAll(".collector,.town-walker.one").forEach(e=>{e.style.backgroundImage=`url("${ASSETS["assets/sprites/residents.png"]}")`});\n'
